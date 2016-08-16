@@ -4,6 +4,7 @@
   <MosaicObjects>
     <MosaicObject>
       <Shading>Mosaic</Shading><!-- Plane / Mosaic -->
+      <MosaicFiness>50.0</MosaicFiness>
       <Primitive>Quad</Primitive><!-- https://docs.unity3d.com/ScriptReference/PrimitiveType.html -->
       <Attach>Bip01 Head</Attach>
       <Position><x>-0.05</x><y>0.1</y><z>0</z></Position>

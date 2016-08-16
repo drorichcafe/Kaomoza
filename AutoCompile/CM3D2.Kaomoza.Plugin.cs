@@ -6,7 +6,7 @@ using UnityInjector.Attributes;
 
 namespace CM3D2.Kaomoza
 {
-	[PluginFilter("CM3D2x64"), PluginFilter("CM3D2x86"), PluginName("Kaomoza"), PluginVersion("0.0.0.0")]
+	[PluginFilter("CM3D2x64"), PluginFilter("CM3D2x86"), PluginName("Kaomoza"), PluginVersion("0.0.0.1")]
 	public class Kaomoza : PluginBase
 	{
 		public class Config
@@ -20,6 +20,7 @@ namespace CM3D2.Kaomoza
 			public class MosaicObject
 			{
 				public ShadingType Shading = ShadingType.Plane;
+				public float MosaicFiness = 15.0f;
 				public PrimitiveType Primitive = PrimitiveType.Cube;
 				public string Attach = string.Empty;
 				public Vector3 Position = Vector3.zero;
@@ -118,6 +119,7 @@ namespace CM3D2.Kaomoza
 								break;
 							case Config.ShadingType.Mosaic:
 								obj.GetComponent<MeshRenderer>().sharedMaterial.shader = Shader.Find("CM3D2/Mosaic");
+								obj.GetComponent<MeshRenderer>().sharedMaterial.SetFloat("_FloatValue1", cnf.MosaicFiness);
 								break;
 						}
 
